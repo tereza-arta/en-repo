@@ -15,7 +15,9 @@ jobs:
 
     my-deploy:
         runs-on: ubuntu-latest
+        needs: my-testing
 
         steps:
         - name: Print Hello message from my-deploy
           run : echo "Hello world from my-deploy"
+          
