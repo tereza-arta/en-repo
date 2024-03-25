@@ -1,0 +1,14 @@
+name: My-GitHubActions-Basics
+
+on:
+    push: 
+        branches: 
+            - main
+ 
+jobs:
+    my-testing:
+        runs-on: ubuntu-latest
+        
+        steps:
+        - name: Print Hello Message
+          run : echo "Hello world from my-testing"
