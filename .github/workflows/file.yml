@@ -25,7 +25,7 @@ jobs:
         - name: Print Hello message from my-deploy
           run : |
             echo "Hello world from my-deploy"
-            echo value of env var is: ${{ env.APPLICATION_NAME }}
+            echo value of env var is: $APPLICATION_NAME
             echo value of job-level env var is: $JOB_LEVEL_ENV_VAR
             echo value of step-level env var2 is: ${{ env.STEP_LEVEL_ENV_VAR2 }}
           env:
