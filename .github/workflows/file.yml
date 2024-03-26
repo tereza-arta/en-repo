@@ -1,5 +1,7 @@
 name: My-GitHubActions-Basics
 
+env:
+    APPLICATION_NAME: "MyApp"
 on:
     push: 
         branches: 
@@ -19,5 +21,7 @@ jobs:
 
         steps:
         - name: Print Hello message from my-deploy
-          run : echo "Hello world from my-deploy"
+          run : |
+            echo "Hello world from my-deploy"
+            echo value of env var is: ${{ env.APPLICATION_NAME}}
           
