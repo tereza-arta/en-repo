@@ -37,5 +37,5 @@ jobs:
               run: echo "$ENV_CONTEXT"  
             - name: Dump strategy context
               env : 
-                SECRETS: ${{ toJson(secrets) }}
-              run : echo "Strategy context is $SECRETS"     
+                NEEDS: ${{ toJson(needs) }}
+              run : echo "Strategy context is $NEEDS"     
