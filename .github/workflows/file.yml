@@ -13,4 +13,4 @@ jobs:
                 GITHUB_CONTEXT: ${{ toJson(github) }}
               run : |
                 echo "$GITHUB_CONTEXT"  
-                echo "Repo is - $GITHUB_REPOSITORY"
+                echo "Repo is - $GITHUB_EVENT_COMMITS_AUTHOR_NAME"
