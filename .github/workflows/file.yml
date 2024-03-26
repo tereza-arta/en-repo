@@ -37,14 +37,5 @@ jobs:
               run: echo "$ENV_CONTEXT"  
             - name: Dump strategy context
               env : 
-                NEEDS: ${{ toJson(needs) }}
-              run : echo "Strategy context is $NEEDS"     
-
-    second_job:
-        runs-on: ubuntu-latest
-        needs: dump_context_to_log
-        steps:
-            - name: Dump needs context
-              env :
-                SECOND_NEEDS: ${{ toJson(needs) }}
-              run : echo $SECOND_NEEDS                        
+                INPUTS: ${{ toJson(inputs) }}
+              run : echo "Inputs context is $INPUTS"     
