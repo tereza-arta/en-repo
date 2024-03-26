@@ -1,34 +1,13 @@
-name: My-GitHubActions-Basics
+name: My-GitHub-Actions
 
-env:
-    APPLICATION_NAME: "MyApp"
 on:
-    push: 
-        branches: 
-            - main
- 
+    push:
+        branches: [main]
+
 jobs:
     my-testing:
         runs-on: ubuntu-latest
-        
-        steps:
-        - name: Print Hello Message from my-testing
-          run : echo "Hello world from my-testing"
-
-    my-deploy:
-        runs-on: ubuntu-latest
-        needs: my-testing
-        env:
-            JOB_LEVEL_ENV_VAR: "Value-of-job-level-env-var"
 
         steps:
-        - name: Print Hello message from my-deploy
-          run : |
-            echo "Hello world from my-deploy"
-            echo value of env var is:: $APPLICATION_NAME
-            echo value of job-level env var is:: $JOB_LEVEL_ENV_VAR
-            echo value of step-level env var2 is:: $STEP_LEVEL_ENV_VAR2
-          env:
-            STEP_LEVEL_ENV_VAR2: "Value-of-step-level-env-var2"
-
-          
+            - name: View current folder
+              run : ls -la
