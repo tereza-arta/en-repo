@@ -1,18 +1,10 @@
-name: CI
+name: Context testing
 on: push
 jobs:
-    my-check:
-        if: ${{ github.ref == 'refs/heads/main' }}
+    dump_context_to_log:
         runs-on: ubuntu-latest
         steps:
-            - name: Init step for main
-              run : echo "Running on branch $GITHUB_REF"
-
-    my-check-for-dev:
-        if: ${{ github.ref == 'refs/heads/dev' }} 
-        runs-on: ubuntu-latest
-        steps:
-            - name: Init step for dev  
-              run : echo "Running on branch $GITHUB_REF"       
-
-
+            - name: Dump GitHub context
+              env : 
+                GITHUB_CONTEXT: ${{ toJson(github) }}
+              run : echo "$GITHUB_CONTEXT"  
