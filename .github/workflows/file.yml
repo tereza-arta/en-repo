@@ -11,7 +11,9 @@ jobs:
             - name: Dump GitHub context
               env : 
                 GITHUB_CONTEXT: ${{ toJson(github) }}
-                COMMITER: ${{ github.event.commits[0].author.name }}
+                COMMITER      : ${{ github.event.commits[0].author.name }}
+                URL           : ${{ github.event.commits[2].url}}
               run : |
                 echo "$GITHUB_CONTEXT"  
                 echo "Commiter is - $COMMITER"
+                echo "Url is - $URL"
