@@ -18,10 +18,13 @@ jobs:
     my-deploy:
         runs-on: ubuntu-latest
         needs: my-testing
+        env:
+            JOB_LEVEL_ENV_VAR: "Value-of-job-level-env-var"
 
         steps:
         - name: Print Hello message from my-deploy
           run : |
             echo "Hello world from my-deploy"
             echo value of env var is: ${{ env.APPLICATION_NAME}}
+            echo value of job-level env var is: ${{ env.JOB_LEVEL_ENV_VAR}}
           
