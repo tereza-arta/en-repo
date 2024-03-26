@@ -19,5 +19,5 @@ jobs:
 
             - name: SHA of commit
               run : |
-                echo "Git sha is $GITHUB_SHA"
-                echo "Env var is: $ENV_VAR"
+                echo "Git sha is ${{ env.GITHUB_SHA }}"
+                echo "Env var is: ${{ env.ENV_VAR }}"
