@@ -1,23 +1,11 @@
-name: My-GitHub-Actions
-env:
-    ENV_VAR: "Value-of-env-var"
-
-on:
-    push:
-        branches: [main]
-
+name: CI
+on: push
 jobs:
-    my-testing:
+    my-check:
+        if: ${{ github.ref == 'refs/heads/main' }}
         runs-on: ubuntu-latest
-
         steps:
-            - name: View current folder
-              run : ls -la
+            - name: Init step
+              run : echo "Running on branch $GITHUB_REF"
 
-            - name: Checkout after clone repo
-              uses: actions/checkout@v4.1.1
 
-            - name: SHA of commit
-              run : |
-                echo "Git sha is ${{ env.GITHUB_SHA }}"
-                echo "Env var is: ${{ env.ENV_VAR }}"
