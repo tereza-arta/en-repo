@@ -1,4 +1,6 @@
 name: Context testing
+env:
+    ENV_VAR: "Value-of-env-var"
 on: push
 jobs:
     dump_context_to_log:
