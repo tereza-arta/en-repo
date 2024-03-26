@@ -4,6 +4,8 @@ env:
 on: push
 jobs:
     dump_context_to_log:
+        env:
+          JOB_ENV_VAR: "Value-of-job-env-var"
         runs-on: ubuntu-latest
         steps:
             - name: Dump GitHub context
