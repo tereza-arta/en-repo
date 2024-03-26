@@ -44,5 +44,7 @@ jobs:
         runs-on: ubuntu-latest
         needs: dump_context_to_log
         steps:
-            - name: Init step in second-job
-              run : echo Hello from Second-job                        
+            - name: Dump needs context
+              env :
+                SECOND_NEEDS: ${{ toJson(needs) }}
+              run : echo $SECOND_NEEDS                        
