@@ -11,3 +11,9 @@ jobs:
         steps:
             - name: View current folder
               run : ls -la
+
+            - name: Checkout after clone repo
+              uses: actions/checkout@v4.1.1
+
+            - name: Current folder after clone of repo
+              run : ls -la
