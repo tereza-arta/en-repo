@@ -5,7 +5,14 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         runs-on: ubuntu-latest
         steps:
-            - name: Init step
+            - name: Init step for main
               run : echo "Running on branch $GITHUB_REF"
+
+    my-check-for-dev:
+        if: ${{ github.ref == 'refs/heads/dev' }} 
+        runs-on: ubuntu-latest
+        steps:
+            - name: Init step for dev  
+              run : echo "Running on branch $GITHUB_REF"       
 
 
