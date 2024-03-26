@@ -27,3 +27,7 @@ jobs:
                 echo "Runner os is: $RUNNER_OS"
                 echo "Runner arch is: $RUNNER_ARCH"
                 echo "Runner ws is: $RUNNER_WORKSPACE"
+            - name: Dump env context
+              env : 
+                ENV_CONTEXT: ${{ toJson(env) }}    
+              run: echo "$ENV_CONTEXT"  
