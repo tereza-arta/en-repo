@@ -25,3 +25,5 @@ jobs:
               run : |
                 echo "$RUNNER_CONTEXT"    
                 echo "Runner os is: $RUNNER_OS"
+                echo "Runner arch is: $RUNNER_ARCH"
+                echo "Runner ws is: $RUNNER_WORKSPACE"
