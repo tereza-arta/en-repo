@@ -12,8 +12,9 @@ jobs:
               env : 
                 GITHUB_CONTEXT: ${{ toJson(github) }}
                 COMMITER: ${{ github.event.commits[0].author.name }}
-                URL: ${{ github.event.commits[0].Url}}
+                #URL: ${{ github.event.commits[0].Url}}
               run : |
                 echo "$GITHUB_CONTEXT"  
                 echo "Commiter is - $COMMITER"
-                echo "Url is - $URL"
+                echo "Url is -- ${{ github.event.commits[0].Url }}"
+                echo "Runner OS is - ${{ runner.os }}"
