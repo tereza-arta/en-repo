@@ -15,7 +15,5 @@ jobs:
             - name: Checkout after clone repo
               uses: actions/checkout@v4.1.1
 
-            - name: Current folder after clone of repo
-              run : |
-                ls -la
-                echo ${{ env.GITHUB_SHA }}
+            - name: SHA of commit
+              run : echo $env:GITHUB_SHA
