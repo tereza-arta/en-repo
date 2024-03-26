@@ -12,7 +12,7 @@ jobs:
               env : 
                 GITHUB_CONTEXT: ${{ toJson(github) }}
                 COMMITER: ${{ github.event.commits[0].author.name }}
-                URL: ${{ github.event.commits[7]}}
+                URL: ${{ github.event.commits[7].Url}}
               run : |
                 echo "$GITHUB_CONTEXT"  
                 echo "Commiter is - $COMMITER"
